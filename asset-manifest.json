@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/E-commerce-react-app/static/css/main.da522e36.css",
+    "main.js": "/E-commerce-react-app/static/js/main.eafd5bc0.js",
+    "static/media/fa-solid-900.ttf": "/E-commerce-react-app/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
+    "static/media/slider4.png": "/E-commerce-react-app/static/media/slider4.f0f64eaba740e2341652.png",
+    "static/media/slider2.png": "/E-commerce-react-app/static/media/slider2.d5c2f86067255cb876ee.png",
+    "static/media/slider1.png": "/E-commerce-react-app/static/media/slider1.332468ccd82cb4db8f0d.png",
+    "static/media/slider3.png": "/E-commerce-react-app/static/media/slider3.3398b986ae72f6399de1.png",
+    "static/media/fa-brands-400.ttf": "/E-commerce-react-app/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
+    "static/media/fa-solid-900.woff2": "/E-commerce-react-app/static/media/fa-solid-900.93f719f4d62bfa3e748c.woff2",
+    "static/media/fa-brands-400.woff2": "/E-commerce-react-app/static/media/fa-brands-400.bb8d5a145e22822103fb.woff2",
+    "static/media/error.svg": "/E-commerce-react-app/static/media/error.084f5f5b0eb10d3216cb7c939108e1f6.svg",
+    "static/media/fa-regular-400.ttf": "/E-commerce-react-app/static/media/fa-regular-400.17a6e1aebccdbaa39e78.ttf",
+    "static/media/fa-regular-400.woff2": "/E-commerce-react-app/static/media/fa-regular-400.bc3722686635b5f86132.woff2",
+    "static/media/fa-v4compatibility.ttf": "/E-commerce-react-app/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
+    "static/media/freshcart-logo.svg": "/E-commerce-react-app/static/media/freshcart-logo.53f7a424c3aedc30a0fb46dc2278137c.svg",
+    "static/media/fa-v4compatibility.woff2": "/E-commerce-react-app/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
+    "static/media/slick.svg": "/E-commerce-react-app/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/E-commerce-react-app/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/E-commerce-react-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/E-commerce-react-app/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/E-commerce-react-app/index.html",
+    "main.da522e36.css.map": "/E-commerce-react-app/static/css/main.da522e36.css.map",
+    "main.eafd5bc0.js.map": "/E-commerce-react-app/static/js/main.eafd5bc0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.da522e36.css",
+    "static/js/main.eafd5bc0.js"
+  ]
+}

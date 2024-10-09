@@ -16,7 +16,7 @@ export default function Cart() {
   useEffect(()=>{
     ( async ()=>{
     let data = await getCart()
-    if(data?.response?.data.statusMsg === 'fail'){
+    if(data?.response?.data.statusMsg == 'fail'){
       return setData(null)
     }
     else{
@@ -31,7 +31,7 @@ export default function Cart() {
   async function deleteProduct(id){
       let data = await deleteCart(id)
       console.log(data)
-      if(data.status === 'success'){
+      if(data.status == 'success'){
         toast.error('you deleted this item')
         setCounter(data?.numOfCartItems)
         setData(data)
@@ -42,14 +42,14 @@ export default function Cart() {
   async function update(id, count){
     let data = await updateQty(id, count)
     console.log(data)
-    if(data.status === 'success'){
+    if(data.status == 'success'){
       toast.info('products updated successfully')
       setCounter(data?.numOfCartItems)
       setData(data)
 }
 }
 if(loading) return <Loading/>
-if(data.numOfCartItems === 0 || data==null) return <div className='pt-5 mt-4 text-center'><h2 className=' text-main mt-5 pt-5'><b>Your cart is empty</b></h2>
+if(data?.numOfCartItems == 0 || data==null) return <div className='pt-5 mt-4 text-center'><h2 className=' text-main mt-5 pt-5'><b>Your cart is empty</b></h2>
 <button className='btn mt-2 p-3 bg-info mb-5'> <Link to={'/home'}> <b> Go shopping</b> </Link></button>
 </div>
   return ( <>

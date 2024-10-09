@@ -4,7 +4,7 @@ import { createContext, useState } from "react";
 export let cartContext = createContext();
 
 async function addToCart(productId) {
-  return axios
+   return axios
     .post(
       "https://ecommerce.routemisr.com/api/v1/cart",
       { productId },
@@ -18,7 +18,6 @@ async function addToCart(productId) {
     .catch((err) => err);
 }
 async function getCart() {
-  if(localStorage.getItem('userToken')){
     return axios
     .get("https://ecommerce.routemisr.com/api/v1/cart", {
       headers: {
@@ -27,7 +26,6 @@ async function getCart() {
     })
     .then(({ data }) => data)
     .catch((err) => err);
-  }
   
 }
 

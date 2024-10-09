@@ -42,7 +42,7 @@ export default function ForgotPassword() {
 
   return (
     <>
-    <div className="container mt-5 pt-5 d-flex justify-content-center align-items-center ">
+    <div className="container mt-5 pt-5 d-flex justify-content-center align-items-center mb-4">
       <div className='bg-info rounded-3 w-50 p-5'>
       <h4 className='text center'>Forgot Password</h4>
       <form onSubmit={check.handleSubmit} >

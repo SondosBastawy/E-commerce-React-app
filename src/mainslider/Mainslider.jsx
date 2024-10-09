@@ -6,8 +6,6 @@ import slider3 from '../Assets/Images/slider3.png'
 import slider4 from '../Assets/Images/slider4.png'
 
 
-
-
 export default function Mainslider() {
   var settings = {
     dots: false,

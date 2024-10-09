@@ -16,7 +16,7 @@ export default function Cart() {
   useEffect(()=>{
     ( async ()=>{
     let data = await getCart()
-    if(data?.response?.data.statusMsg == 'fail'){
+    if(data?.response?.data.statusMsg === 'fail'){
       return setData(null)
     }
     else{
@@ -49,7 +49,7 @@ export default function Cart() {
 }
 }
 if(loading) return <Loading/>
-if(data.numOfCartItems == 0 || data==null) return <div className='pt-5 mt-4 text-center'><h2 className=' text-main mt-5 pt-5'><b>Your cart is empty</b></h2>
+if(data.numOfCartItems === 0 || data==null) return <div className='pt-5 mt-4 text-center'><h2 className=' text-main mt-5 pt-5'><b>Your cart is empty</b></h2>
 <button className='btn mt-2 p-3 bg-info mb-5'> <Link to={'/home'}> <b> Go shopping</b> </Link></button>
 </div>
   return ( <>
@@ -71,10 +71,7 @@ return <div className="row border-bottom" key={item._id}>
             <button className='btn text-white mb-2 text-bg-danger' onClick={()=>deleteProduct(item.product._id)}><i className="fa-solid fa-trash-can"></i> remove</button>
           </div>
         <div>
-            <button  className=' btn brdr' onClick={()=>{
-              {(item.count<=1)? deleteProduct(item.product._id) 
-              :  update(item.product._id, item.count-1)}
-            }}>-</button>
+            <button  className=' btn brdr' onClick={()=>{item.count<=1 ? deleteProduct(item.product._id) :update(item.product._id, item.count-1)}}>-</button>
           <span className='px-3'>{item.count}</span>
             <button className=' btn brdr' onClick={()=>update(item.product._id, item.count+1 )} >+</button>
         </div>

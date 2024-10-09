@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import Loading from '../Loading/Loading'
 import { useQuery } from 'react-query'
 import  axios  from 'axios'
-import SubCategories from '../SubCategories/SubCategories'
 
 export default function Category() {
 

@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import { cartContext } from '../Context/CartContext'
+import React from 'react'
 
 
 export default function SubCategory({item}) {

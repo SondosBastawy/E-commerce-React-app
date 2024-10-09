@@ -23,7 +23,7 @@ export default function Navbar() {
     let data = await getCart()
     setCounter(data.numOfCartItems)
   })()
-  }, [])
+  }, [getCart, setCounter])
 
   return (
     <>

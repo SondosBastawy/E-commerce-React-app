@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick';
 import Loading from '../Loading/Loading';
 import { Link } from 'react-router-dom'
-import SubCategories from '../SubCategories/SubCategories';
-
 
 export default function Categories({item}) {
 const [categories, setCategories] =useState([]);

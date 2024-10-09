@@ -1,6 +1,5 @@
 import React from 'react'
 import Mainslider from '../mainslider/Mainslider'
-import Categories from '../Categories/Categories'
 import { Helmet } from 'react-helmet'
 import Products from '../Products/Products'
 

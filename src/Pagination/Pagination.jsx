@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ReactPaginate from 'react-paginate';
-import { Link } from 'react-router-dom';
 
 
 export default function Pagination({getPage}) {

@@ -7,7 +7,7 @@ import { WishListContext } from '../Context/WishListContext'
 
 export default function Product({item}) {
 
-  let {counter, setCounter , addToCart }=useContext(cartContext)
+  let { setCounter , addToCart }=useContext(cartContext)
   let { addToWishList} = useContext(WishListContext)
 
   async function addProductToCart(productId){

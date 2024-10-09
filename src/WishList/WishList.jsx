@@ -8,8 +8,8 @@ import { WishListContext } from '../Context/WishListContext'
 
 export default function WishList() {
 
-  let { addToCart, setCounter, counter } =useContext(cartContext)
-  let {getWishList, addToWishList } = useContext(WishListContext)
+  let { addToCart, setCounter} =useContext(cartContext)
+  let {getWishList } = useContext(WishListContext)
   let [data, setData] = useState(null)
   let [loading, setLoading] = useState(true)
 
@@ -25,7 +25,7 @@ export default function WishList() {
   useEffect(()=>{
     ( async ()=>{
     let data = await getWishList()
-    if(data?.response?.data.statusMsg == 'fail'){
+    if(data?.response?.data.statusMsg === 'fail'){
       return setData(null)
     }
     else{
@@ -40,7 +40,7 @@ export default function WishList() {
 
 
 if(loading) return <Loading/>
-if(data.numOfCartItems == 0 || data==null) return <div className='pt-5 mt-4 text-center'><h2 className=' text-main mt-5 pt-5'>Your WishList is empty</h2>
+if(data.numOfCartItems === 0 || data==null) return <div className='pt-5 mt-4 text-center'><h2 className=' text-main mt-5 pt-5'>Your WishList is empty</h2>
 <button className='btn bg-danger-subtle mt-2 p-3 '> <Link to={'/home'}> <b>Go Shopping</b> </Link></button></div>
   return <>
           <div className="container p-4 cursor-pointer rounded-2 mt-5 border-2 ">

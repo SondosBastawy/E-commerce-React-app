@@ -15,7 +15,7 @@ export default function ProductDetails() {
   }
   let {data,isLoading} =useQuery('getProductDetails', getProductDetails)
 
-  let {counter, setCounter, addToCart} =useContext(cartContext)
+  let {setCounter, addToCart} =useContext(cartContext)
   async function addProductToCart(productId){
     let data = await addToCart(productId)
     if (data.status === 'success'){

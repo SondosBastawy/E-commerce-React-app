@@ -13,7 +13,7 @@ export default function Layout() {
     if (localStorage.getItem('userToken') !== '') {
       setUserToken(localStorage.getItem('userToken'))
     }
-  }, []);
+  }, [setUserToken]);
   return (
     <>
     <Navbar/>

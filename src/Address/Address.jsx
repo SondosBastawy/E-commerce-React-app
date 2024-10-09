@@ -1,10 +1,9 @@
 import { useFormik } from "formik";
 import React, { useContext, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { cartContext } from "../Context/CartContext";
 
 export default function Address() {
-  let navigate = useNavigate();
 
 //   const [SetErrorMsg] = useState("");
   const [loading, setLoading] = useState(true);
@@ -19,7 +18,7 @@ async function sendDataToApi( values) {
     let data = await pay(id , values)
     console.log(data)
     setLoading(true);
-    if(data.status == 'success'){
+    if(data.status === 'success'){
         window.location.href = data.session.url
 
     }

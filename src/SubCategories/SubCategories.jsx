@@ -1,7 +1,6 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useQuery } from 'react-query'
 import Loading from '../Loading/Loading'
 import SubCategory from '../SubCategory/SubCategory'
 
@@ -15,8 +14,6 @@ export default function SubCategories() {
   let x = useParams()
     console.log(x)
 
-
-
   async function getSubCategories(){
     let data = await axios.get(`https://ecommerce.routemisr.com/api/v1/categories/${x.Id}/subcategories`)
     setSubCategories(data?.data.data);
@@ -24,8 +21,8 @@ export default function SubCategories() {
     console.log(subCategories)
     setLoading(false)
   }
-
-    let {data, isLoading} =useQuery('getSubCategories', getSubCategories)
+  getSubCategories()
+    // let {data, isLoading} =useQuery('getSubCategories', getSubCategories)
 
   return (
     <>

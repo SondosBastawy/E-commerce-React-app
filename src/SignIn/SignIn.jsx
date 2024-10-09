@@ -11,7 +11,7 @@ export default function SignIn() {
   const [errorMsg, SetErrorMsg] = useState('')
   const [loading, setLoading] = useState(true)
 
-  let { setUserToken }= useContext(userContext)
+  let { setUserToken, userToken }= useContext(userContext)
 
 
 
@@ -20,10 +20,11 @@ export default function SignIn() {
     setLoading(false)
     await axios.post('https://ecommerce.routemisr.com/api/v1/auth/signin', values)
     .then(({data}) =>{
-      if (data.message === 'success'){
-        setUserToken(data.userToken)
-        navigate('/Home')
+      if (data.message == 'success'){
+        setUserToken(data.token)
+        console.log(userToken)
         localStorage.setItem('userToken', data.token)
+        navigate('/Home')
       }
     }).catch((err) =>{SetErrorMsg(err.response.data.message)})
     setLoading(true)

@@ -13,7 +13,7 @@ export default function Navbar() {
   let navigate = useNavigate()
 
   function signOut(){
-    localStorage.setItem('userToken' , null)
+    localStorage.removeItem('userToken')
     setUserToken(null)
     navigate('/Home')  
   }
@@ -21,9 +21,9 @@ export default function Navbar() {
   useEffect(()=>{
     ( async ()=>{
     let data = await getCart()
-    setCounter(data.numOfCartItems)
+    setCounter(data?.numOfCartItems)
   })()
-  }, [])
+  }, [setCounter])
 
   return (
     <>
@@ -34,7 +34,7 @@ export default function Navbar() {
       <span className="navbar-toggler-icon" />
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      {userToken != null ? <>
+      {userToken !== null ? <>
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
           <NavLink className="nav-link" aria-current="page" to="/home">Home</NavLink>
@@ -48,11 +48,11 @@ export default function Navbar() {
         <li className="nav-item">
           <NavLink className="nav-link" to="/Products">Products</NavLink>
         </li>
-      </ul></>: null }
+      </ul></>: ''}
       
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
-        {userToken != null ?<>
+        {userToken !== null ?<>
         <li className="nav-item border-start">
           <NavLink className="nav-link position-relative" to="/wishlist"> Wishlist
           <i className="fa-regular fa-heart"></i>
@@ -69,7 +69,7 @@ export default function Navbar() {
           <button className="nav-link"  onClick={()=> signOut()}>SignOut</button>
         </li></>: <>
         <li className="nav-item px-4 border-start">
-          <NavLink className="nav-link" to="/signin">logIn</NavLink>
+          <NavLink className="nav-link" to="/signin">Sign-In</NavLink>
         </li>
         <li className="nav-item px-4 border-start">
         <NavLink className="nav-link" to="/signup">Register</NavLink>

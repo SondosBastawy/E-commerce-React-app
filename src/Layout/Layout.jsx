@@ -10,7 +10,7 @@ import Footer from '../Footer/Footer'
 export default function Layout() {
   let { setUserToken } = useContext(userContext)
   useEffect(() => {
-    if (localStorage.getItem('userToken') !== '') {
+    if (localStorage.getItem('userToken') != null ) {
       setUserToken(localStorage.getItem('userToken'))
     }
   }, [setUserToken]);

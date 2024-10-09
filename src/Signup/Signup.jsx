@@ -17,7 +17,7 @@ export default function Signup() {
     setLoading(false)
     await axios.post('https://ecommerce.routemisr.com/api/v1/auth/signup', values)
     .then(({data}) =>{
-      if (data.message === 'success'){
+      if (data.message == 'success'){
         navigate('/SignIn')
       }
     }).catch((err) =>{SetErrorMsg(err.response.data.message)})

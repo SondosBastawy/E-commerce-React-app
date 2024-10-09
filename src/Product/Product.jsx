@@ -12,7 +12,7 @@ export default function Product({item}) {
 
   async function addProductToCart(productId){
     let data = await addToCart(productId)
-    if (data.status === 'success'){
+    if (data?.status == 'success'){
       toast.success('product added successfully')
       setCounter(data.numOfCartItems)
     }
@@ -20,7 +20,7 @@ export default function Product({item}) {
   async function addProductToWishList(productId){
     let data = await addToWishList(productId)
     console.log(data)
-    if (data.status === 'success'){
+    if (data?.status == 'success'){
       toast.info('product added to your wishList')
       // setCounter(data.numOfCartItems)
     }

@@ -21,7 +21,8 @@ async function addToWishList(productId) {
 }
 
 async function getWishList() {
-  return axios
+  if(localStorage.getItem('userToken')){
+    return axios
     .get("https://ecommerce.routemisr.com/api/v1/wishlist", {
       headers: {
         token: localStorage.getItem("userToken"),
@@ -29,6 +30,7 @@ async function getWishList() {
     })
     .then(({ data }) => data)
     .catch((err) => err);
+  }
 }
 
 

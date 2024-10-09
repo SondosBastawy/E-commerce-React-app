@@ -18,7 +18,8 @@ async function addToCart(productId) {
     .catch((err) => err);
 }
 async function getCart() {
-  return axios
+  if(localStorage.getItem('userToken')){
+    return axios
     .get("https://ecommerce.routemisr.com/api/v1/cart", {
       headers: {
         token: localStorage.getItem("userToken"),
@@ -26,6 +27,8 @@ async function getCart() {
     })
     .then(({ data }) => data)
     .catch((err) => err);
+  }
+  
 }
 
 async function deleteCart(productId) {

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/E-commerce-react-app/static/css/main.da522e36.css",
-    "main.js": "/E-commerce-react-app/static/js/main.eafd5bc0.js",
+    "main.js": "/E-commerce-react-app/static/js/main.8914244f.js",
     "static/media/fa-solid-900.ttf": "/E-commerce-react-app/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
     "static/media/slider4.png": "/E-commerce-react-app/static/media/slider4.f0f64eaba740e2341652.png",
     "static/media/slider2.png": "/E-commerce-react-app/static/media/slider2.d5c2f86067255cb876ee.png",
@@ -22,10 +22,10 @@
     "static/media/slick.woff": "/E-commerce-react-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/E-commerce-react-app/index.html",
     "main.da522e36.css.map": "/E-commerce-react-app/static/css/main.da522e36.css.map",
-    "main.eafd5bc0.js.map": "/E-commerce-react-app/static/js/main.eafd5bc0.js.map"
+    "main.8914244f.js.map": "/E-commerce-react-app/static/js/main.8914244f.js.map"
   },
   "entrypoints": [
     "static/css/main.da522e36.css",
-    "static/js/main.eafd5bc0.js"
+    "static/js/main.8914244f.js"
   ]
 }

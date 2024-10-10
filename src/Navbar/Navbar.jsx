@@ -21,9 +21,9 @@ export default function Navbar() {
   useEffect(()=>{
     ( async ()=>{
     let data = await getCart()
-    setCounter(data?.numOfCartItems)
+    setCounter(data.numOfCartItems)
   })()
-  }, [setCounter])
+  }, [])
 
   return (
     <>

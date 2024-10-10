@@ -22,7 +22,6 @@ export default function SignIn() {
     .then(({data}) =>{
       if (data.message == 'success'){
         setUserToken(data.token)
-        console.log(userToken)
         localStorage.setItem('userToken', data.token)
         navigate('/Home')
       }

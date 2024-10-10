@@ -11,24 +11,35 @@ export default function Product({item}) {
   let { addToWishList} = useContext(WishListContext)
 
   async function addProductToCart(productId){
-    let data = await addToCart(productId)
+    if(localStorage.getItem('userToken')){
+      let data = await addToCart(productId)
     if (data?.status == 'success'){
       toast.success('product added successfully')
       setCounter(data.numOfCartItems)
     }
+    }
+    else{
+        toast.info(('Please Register or Sign-in first '))
+    }
   }
   async function addProductToWishList(productId){
-    let data = await addToWishList(productId)
+    if(localStorage.getItem('userToken')){
+      let data = await addToWishList(productId)
     console.log(data)
     if (data?.status == 'success'){
       toast.info('product added to your wishList')
       // setCounter(data.numOfCartItems)
     }
+    }
+    else{
+        toast.info(('Please Register or Sign-in first '))
+    }
   }
+  
   return (
     <>
     <div className="col-md-3 w-25">
-          <div className="product p-2 cursor-pointer rounded-2 w-75">
+          <div className="product p-2 cursor-pointer rounded-2 w-100">
            <Link to={'/product-details/'+ item._id} >
            <img src={item.imageCover} className='w-100' height={280} alt="product" />
             <span className='text-main'>{item.category.name}</span>

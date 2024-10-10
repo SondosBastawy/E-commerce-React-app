@@ -3,6 +3,8 @@ import { useFormik } from 'formik'
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { userContext } from '../Context/UserContext'
+import { cartContext } from '../Context/CartContext'
+import { WishListContext } from '../Context/WishListContext'
 
 export default function SignIn() {
 
@@ -13,9 +15,6 @@ export default function SignIn() {
 
   let { setUserToken, userToken }= useContext(userContext)
 
-
-
-
   async function  sendDataToApi(values){
     setLoading(false)
     await axios.post('https://ecommerce.routemisr.com/api/v1/auth/signin', values)
@@ -23,6 +22,7 @@ export default function SignIn() {
       if (data.message == 'success'){
         setUserToken(data.token)
         localStorage.setItem('userToken', data.token)
+        window.scrollTo(0, 0);
         navigate('/Home')
       }
     }).catch((err) =>{SetErrorMsg(err.response.data.message)})

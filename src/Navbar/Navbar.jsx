@@ -3,6 +3,7 @@ import imgLogo from "../Assets/Images/freshcart-logo.svg"
 import { NavLink, useNavigate } from 'react-router-dom'
 import { cartContext } from '../Context/CartContext'
 import { userContext } from '../Context/UserContext'
+import { WishListContext } from '../Context/WishListContext'
 
 
 export default function Navbar() {
@@ -10,20 +11,24 @@ export default function Navbar() {
 
   let {counter, getCart, setCounter } =useContext(cartContext)
   let {userToken , setUserToken} = useContext(userContext)
+  let {wishCount, setWishCount, getWishList} = useContext(WishListContext)
   let navigate = useNavigate()
 
   function signOut(){
     localStorage.removeItem('userToken')
     setUserToken(null)
+        window.scrollTo(0, 0);
     navigate('/Home')  
   }
   
   useEffect(()=>{
     ( async ()=>{
     let data = await getCart()
-    setCounter(data.numOfCartItems)
+    setCounter(data?.numOfCartItems)
+    let wishData = await getWishList()
+    setWishCount(wishData?.count)
   })()
-  }, [])
+  }, [setCounter, setWishCount, getCart, getWishList])
 
   return (
     <>
@@ -57,6 +62,7 @@ export default function Navbar() {
           <NavLink className="nav-link position-relative" to="/wishlist"> Wishlist
           <i className="fa-regular fa-heart"></i>
           <span className="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-danger">
+            {wishCount}
           </span></NavLink>
         </li>
         <li className="nav-item border-start">

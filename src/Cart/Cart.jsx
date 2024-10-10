@@ -25,11 +25,11 @@ export default function Cart() {
 
   async function deleteProduct(id) {
     let data = await deleteCart(id);
-    console.log(data);
     if (data.status == "success") {
       toast.error("you deleted this item");
       setCounter(data?.numOfCartItems);
       setData(data);
+      console.log(data.data)
     }
   }
 

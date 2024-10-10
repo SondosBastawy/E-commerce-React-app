@@ -7,7 +7,7 @@ import { WishListContext } from "../Context/WishListContext";
 
 export default function WishList() {
   let { addToCart, setCounter } = useContext(cartContext);
-  let { getWishList, deleteFromWishList } = useContext(WishListContext);
+  let { getWishList, deleteFromWishList, setWishCount , wishCount } = useContext(WishListContext);
   let [data, setData] = useState(null);
   let [loading, setLoading] = useState(true);
 
@@ -19,12 +19,11 @@ export default function WishList() {
     }
   }
   async function deleteProduct(id) {
-    let data = await deleteFromWishList(id);
-    console.log(data);
-    if (data.status == "success") {
+    let response = await deleteFromWishList(id);
+    if (response.status == "success") {
       toast.error("you deleted this item");
-      // setCounter(data?.numOfCartItems)
-      setData(data);
+      setWishCount(wishCount-1)
+      setData({ data: data.data.filter(item => response.data.includes(item._id))});
     }
   }
 
@@ -35,6 +34,7 @@ export default function WishList() {
         return setData(null);
       } else {
         setData(data);
+        console.log(data)
       }
       setLoading(false);
     })();
@@ -58,9 +58,9 @@ export default function WishList() {
     <>
       <div className="container cursor-pointer rounded-2 border-2 my-5  bg-main-light pt-5 ">
         {data?.data.map((item) => (
-          <div className=" border-bottom d-flex pb-4" key={item._id}>
+          <div className=" border-bottom d-flex pb-4" key={item._id} >
             <Link
-              to={"/product-details/" + item._id}
+              to={"/product-details/" + item._id }
               className="d-flex justify-content-around align-items-center flex-row"
             >
               <div className="w-25">

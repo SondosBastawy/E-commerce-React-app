@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export let WishListContext = createContext();
 
@@ -49,8 +49,10 @@ async function deleteFromWishList(productId) {
 
 export default function WishListContextProvider({ children }) {
 
+  let [wishCount, setWishCount] = useState(0);
+
     return (
-        <WishListContext.Provider value={{ getWishList, addToWishList, deleteFromWishList }}>
+        <WishListContext.Provider value={{ getWishList, addToWishList, deleteFromWishList, wishCount, setWishCount }}>
             {" "}
       {children}{" "}
         </WishListContext.Provider>
